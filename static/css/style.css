@@ -1,0 +1,20 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.text-primary {
+  color: #6f42c1 !important; /* Purple color for primary elements */
+}
+
+.btn-primary {
+  background-color: #6f42c1 !important;
+  border-color: #6f42c1 !important;
+}
+
+.icon {
+  font-size: 3em;
+}
+
+#file-input {
+  display: none; /* Or use visibility: hidden; */
+}

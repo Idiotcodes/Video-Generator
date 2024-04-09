@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[name]</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="container-fluid bg-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1>[name]</h1>
+      <nav class="d-flex">
+        <a href="/" class="mr-3 text-dark">Get Started</a>
+        <a href="#" class="text-dark">Help</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container py-5">
+    <div class="row options">
+      <div class="col-md-6 mx-auto mb-4">
+        <div class="option bg-white rounded shadow p-4">
+          <h3 class="text-center mb-3">Enter your text:</h3>
+          <form action="/text-to-video" method="post"> 
+            <div class="form-group">
+              <textarea class="form-control" name="textInput" rows="5" placeholder="Describe the scene you want to create..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Generate Video</button>
+          </form>
+        </div>
+      </div> 
+    </div>
+  </main>
+  <footer class="container-fluid bg-white py-3 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">© 2023 [Your Company Name]. All rights reserved.</p>
+      <nav class="nav justify-content-center"> 
+        <a href="#" class="nav-link text-muted">Terms of Service</a>
+        <a href="#" class="nav-link text-muted">Privacy Policy</a>
+        <a href="#" class="nav-link text-muted">Contact Us</a>
+      </nav>   
+    </div>
+  </footer>
+</body>
+</html>
