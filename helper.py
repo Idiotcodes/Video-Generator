@@ -15,7 +15,7 @@ load_dotenv()
 # set the api keys
 GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 hug_api_key = os.environ.get("HUG_API_KEY")
-#API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"# to access stable diffusion model through inference api
+
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2-1"
 headers = {"Authorization": f"Bearer {hug_api_key}"}
 
@@ -79,7 +79,6 @@ def generate_image(detect_object):
   image_bytes = query({
       "inputs": detect_object,
   })
-  print(image_bytes)
   image = Image.open(io.BytesIO(image_bytes))
   image.save(image_save_path)
 
@@ -127,32 +126,6 @@ def generate_video():
   # Write the final video with the first half of the audio
   final_clip.write_videofile(video_save_path, fps=1)
   return video_save_path
-
-def generate_video_from_text(text_input):
-  # 1. Use text_input to generate images
-  generate_image(text_input)  # Assuming you've modified generate_image 
-
-  # 2. Use text_input to generate audio
-  generate_audio(text_input)
-
-  # 3. Combine images and audio into a video
-  video_save_path = generate_video()
-  return video_save_path
   
 
-if __name__ == "__main__":
-   img_path = r'images_to_check\OIP.jpeg'
-  # object_detected = detect_object(img_path)
-   print(object_detected)
-  # object_description = get_inference(img_path)
-   print(object_description)
-  # generate_image(object_detected)
-  # generate_audio(object_description)
-  # generate_video()
-  #text = "there is a horse in the green field looking to the camera"
-  # generate_image(text)
-  # generate_audio(text)
-  # generate_video()
-  #video_save_path = generate_video_from_text(text)
-  #print(video_save_path)
 
